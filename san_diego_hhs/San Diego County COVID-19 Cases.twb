@@ -1,0 +1,3383 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20201.20.0219.0753                               -->
+<workbook original-version='18.1' source-build='2020.1.0 (20201.20.0219.0753)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ParameterDefaultValues.true...ParameterDefaultValues />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location derived-from='https://public.tableau.com/workbooks/covid19_sandiegohhs?rev=7.6' id='covid19_sandiegohhs' path='/workbooks' revision='7.8' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <style>
+    <_.fcp.MarkAnimation.true...style-rule element='animation'>
+      <format attr='animation-on' value='ao-off' />
+    </_.fcp.MarkAnimation.true...style-rule>
+  </style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column _.fcp.ParameterDefaultValues.true...default-value-field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[Calculation_117656571611664385]' caption='ReportDate' datatype='date' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='#2020-03-27#'>
+        <calculation class='tableau' formula='#2020-03-27#' />
+      </column>
+      <column alias='Total Cases Reported Daily' caption='Data View' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Total&quot;'>
+        <calculation class='tableau' formula='&quot;Total&quot;' />
+        <aliases>
+          <alias key='&quot;Delta&quot;' value='Daily Change in Reported Cases' />
+          <alias key='&quot;Total&quot;' value='Total Cases Reported Daily' />
+          <alias key='&quot;TotalLog&quot;' value='Total Cases Reported Daily (Logarithmic Scale)' />
+        </aliases>
+        <members>
+          <member alias='Total Cases Reported Daily' value='&quot;Total&quot;' />
+          <member alias='Total Cases Reported Daily (Logarithmic Scale)' value='&quot;TotalLog&quot;' />
+          <member alias='Daily Change in Reported Cases' value='&quot;Delta&quot;' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='casesByCity (covid19_sandiegohhs)' inline='true' name='federated.024pzmk0tt0o2p1dzkd7x1tubcbb' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='covid19_sandiegohhs' name='excel-direct.1sethad1rc8wxo1f5vy620f9pet5'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/covid19_sandiegohhs.xlsx' interpretationMode='0' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='SanDiegoCountyZipCodes' name='excel-direct.005i7uv15vbyvh1d4t72x0tku0ya'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/SanDiegoCountyZipCodes.xlsx' interpretationMode='0' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1sethad1rc8wxo1f5vy620f9pet5' name='casesByCity' table='[casesByCity$]' type='table'>
+          <columns gridOrigin='A1:I142:no:A1:I142:0' header='yes' outcome='2'>
+            <column datatype='datetime' name='Date' ordinal='0' />
+            <column datatype='string' name='Country' ordinal='1' />
+            <column datatype='string' name='State' ordinal='2' />
+            <column datatype='string' name='County' ordinal='3' />
+            <column datatype='string' name='City' ordinal='4' />
+            <column datatype='string' name='Type' ordinal='5' />
+            <column datatype='integer' name='Count' ordinal='6' />
+            <column datatype='integer' name='Population' ordinal='7' />
+            <column datatype='real' name='CasesPer100K' ordinal='8' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>County</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[County]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>County</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Type]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Count]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>Count</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Population]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>Population</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CasesPer100K</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[CasesPer100K]</local-name>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias>CasesPer100K</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[casesByCity]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>3</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:I142:no:A1:I142:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Latest Day' datatype='boolean' name='[Calculation_2917488166183309312]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Date] = [Calculation_2917488166183469057] THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='MaxDate' datatype='datetime' name='[Calculation_2917488166183469057]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='{fixed:MAX([Date])}' />
+      </column>
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Cases' datatype='integer' name='[Count]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+      <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+      <drill-paths>
+        <drill-path name='Mapping'>
+          <field>[Country]</field>
+          <field>[State]</field>
+          <field>[County]</field>
+          <field>[City]</field>
+        </drill-path>
+      </drill-paths>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/San Diego County COVID-19 Cases.twb Files/Data/Datasources/casesByCity (covid19_sandiegohhs).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='03/28/2020 12:51:25 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='casesByCity (covid19_sandiegohhs)' increment-value='%null%' refresh-type='create' rows-inserted='136' timestamp-start='2020-03-28 00:51:25.011' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>casesByCity</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Country</remote-alias>
+              <ordinal>1</ordinal>
+              <family>casesByCity</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>2</ordinal>
+              <family>casesByCity</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>County</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[County]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>County</remote-alias>
+              <ordinal>3</ordinal>
+              <family>casesByCity</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>City</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[City]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>City</remote-alias>
+              <ordinal>4</ordinal>
+              <family>casesByCity</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Type</remote-alias>
+              <ordinal>5</ordinal>
+              <family>casesByCity</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Count</remote-alias>
+              <ordinal>6</ordinal>
+              <family>casesByCity</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Population</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Population]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Population</remote-alias>
+              <ordinal>7</ordinal>
+              <family>casesByCity</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CasesPer100K</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[CasesPer100K]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CasesPer100K</remote-alias>
+              <ordinal>8</ordinal>
+              <family>casesByCity</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>82</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+        <filter class='categorical' column='[Type]'>
+          <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+            <groupfilter function='member' level='[Type]' member='&quot;City Not Recorded&quot;' />
+            <groupfilter function='member' level='[Type]' member='&quot;Incorporated City&quot;' />
+            <groupfilter function='member' level='[Type]' member='&quot;Unincorporated&quot;' />
+          </groupfilter>
+        </filter>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.402231' measure-ordering='alphabetic' measure-percentage='0.345273' parameter-percentage='0.252496' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='Country' />
+        <field-sort-custom-order field='State' />
+        <field-sort-custom-order field='County' />
+        <field-sort-custom-order field='City' />
+        <field-sort-custom-order field='Type' />
+        <field-sort-custom-order field='Count' />
+        <field-sort-custom-order field='Population' />
+        <field-sort-custom-order field='CasesPer100K' />
+        <field-sort-custom-order field='Calculation_2917488166183309312' />
+        <field-sort-custom-order field='Calculation_2917488166183469057' />
+      </field-sort-info>
+    </datasource>
+    <datasource caption='summarizedData(covid19_sandiegohhs)' inline='true' name='federated.049xz6r120i6bk10tz9pd1pc7piw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='covid19_sandiegohhs' name='excel-direct.0wv55h40kmewbo145wcsb0zxdqyo'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/covid19_sandiegohhs.xlsx' interpretationMode='0' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.0wv55h40kmewbo145wcsb0zxdqyo' name='summarizedData' table='[summarizedData$]' type='table'>
+          <columns gridOrigin='A1:D85:no:A1:D85:0' header='yes' outcome='6'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='integer' name='CategorySortOrder' ordinal='1' />
+            <column datatype='string' name='Category' ordinal='2' />
+            <column datatype='integer' name='CaseCount' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[summarizedData]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CategorySortOrder</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CategorySortOrder]</local-name>
+            <parent-name>[summarizedData]</parent-name>
+            <remote-alias>CategorySortOrder</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Category</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Category]</local-name>
+            <parent-name>[summarizedData]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CaseCount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CaseCount]</local-name>
+            <parent-name>[summarizedData]</parent-name>
+            <remote-alias>CaseCount</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[summarizedData]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D85:no:A1:D85:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Case Count' datatype='integer' name='[CaseCount]' role='measure' type='quantitative' />
+      <column caption='Category Sort Order' datatype='integer' name='[CategorySortOrder]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Category]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;IntensiveCare&quot;' value='Intensive Care' />
+          <alias key='&quot;NoIntervention&quot;' value='No Intervention' />
+        </aliases>
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/San Diego County COVID-19 Cases.twb Files/Data/Datasources/summarizedData(covid19_sandiegohhs).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='03/28/2020 12:51:26 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='summarizedData(covid19_sandiegohhs)' increment-value='%null%' refresh-type='create' rows-inserted='84' timestamp-start='2020-03-28 00:51:26.352' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>summarizedData</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CategorySortOrder</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[CategorySortOrder]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CategorySortOrder</remote-alias>
+              <ordinal>1</ordinal>
+              <family>summarizedData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Category</remote-alias>
+              <ordinal>2</ordinal>
+              <family>summarizedData</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CaseCount</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[CaseCount]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>CaseCount</remote-alias>
+              <ordinal>3</ordinal>
+              <family>summarizedData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>36</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.333133' measure-ordering='alphabetic' measure-percentage='0.352375' parameter-percentage='0.314492' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Category:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Hospitalized&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;NoIntervention&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Deceased&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;IntensiveCare&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='compiledData (covid19_sandiegohhs)' inline='true' name='federated.09jb7zu0gfoqvw15dbuil109b9nr' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='covid19_sandiegohhs' name='excel-direct.18fdxme1hkm54y13nxlx21bp22f5'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/covid19_sandiegohhs.xlsx' interpretationMode='0' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.18fdxme1hkm54y13nxlx21bp22f5' name='compiledData' table='[compiledData$]' type='table'>
+          <columns gridOrigin='A1:F22:no:A1:F22:0' header='yes' outcome='6'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='integer' name='NoIntervention' ordinal='1' />
+            <column datatype='integer' name='Hospitalized' ordinal='2' />
+            <column datatype='integer' name='IntensiveCare' ordinal='3' />
+            <column datatype='integer' name='Deceased' ordinal='4' />
+            <column datatype='integer' name='Total' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[compiledData]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NoIntervention</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[NoIntervention]</local-name>
+            <parent-name>[compiledData]</parent-name>
+            <remote-alias>NoIntervention</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hospitalized</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Hospitalized]</local-name>
+            <parent-name>[compiledData]</parent-name>
+            <remote-alias>Hospitalized</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IntensiveCare</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[IntensiveCare]</local-name>
+            <parent-name>[compiledData]</parent-name>
+            <remote-alias>IntensiveCare</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Deceased</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Deceased]</local-name>
+            <parent-name>[compiledData]</parent-name>
+            <remote-alias>Deceased</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Total]</local-name>
+            <parent-name>[compiledData]</parent-name>
+            <remote-alias>Total</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[compiledData]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:F22:no:A1:F22:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Data View Selected' datatype='string' name='[Calculation_2167638829251383296]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+      </column>
+      <column caption='Intensive Care' datatype='integer' name='[IntensiveCare]' role='measure' type='quantitative' />
+      <column caption='No Intervention' datatype='integer' name='[NoIntervention]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/San Diego County COVID-19 Cases.twb Files/Data/Datasources/compiledData (covid19_sandiegohhs).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='03/28/2020 12:51:27 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='compiledData (covid19_sandiegohhs)' increment-value='%null%' refresh-type='create' rows-inserted='21' timestamp-start='2020-03-28 00:51:27.696' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>compiledData</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NoIntervention</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[NoIntervention]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>NoIntervention</remote-alias>
+              <ordinal>1</ordinal>
+              <family>compiledData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hospitalized</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Hospitalized]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hospitalized</remote-alias>
+              <ordinal>2</ordinal>
+              <family>compiledData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>IntensiveCare</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[IntensiveCare]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>IntensiveCare</remote-alias>
+              <ordinal>3</ordinal>
+              <family>compiledData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Deceased</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Deceased]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Deceased</remote-alias>
+              <ordinal>4</ordinal>
+              <family>compiledData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Total</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Total]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Total</remote-alias>
+              <ordinal>5</ordinal>
+              <family>compiledData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.314492' measure-ordering='alphabetic' measure-percentage='0.389657' parameter-percentage='0.295851' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Total Cases Reported Daily' caption='Data View' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Total&quot;'>
+          <calculation class='tableau' formula='&quot;Total&quot;' />
+          <aliases>
+            <alias key='&quot;Delta&quot;' value='Daily Change in Reported Cases' />
+            <alias key='&quot;Total&quot;' value='Total Cases Reported Daily' />
+            <alias key='&quot;TotalLog&quot;' value='Total Cases Reported Daily (Logarithmic Scale)' />
+          </aliases>
+        </column>
+      </datasource-dependencies>
+    </datasource>
+    <datasource caption='rawData (covid19_sandiegohhs)' inline='true' name='federated.13rdygm05cu7qh10sy4sr0mq0g5k' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='covid19_sandiegohhs' name='excel-direct.1lb6ifx1lq1zg41ft3nug011aqsm'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/covid19_sandiegohhs.xlsx' interpretationMode='0' server='' validate='no' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1lb6ifx1lq1zg41ft3nug011aqsm' name='rawData' table='[rawData$]' type='table'>
+          <columns gridOrigin='A1:K480:no:A1:K480:0' header='yes' outcome='2'>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='Source' ordinal='1' />
+            <column datatype='string' name='Status' ordinal='2' />
+            <column datatype='string' name='Age_Group' ordinal='3' />
+            <column datatype='string' name='Gender' ordinal='4' />
+            <column datatype='integer' name='Status_Count' ordinal='5' />
+            <column datatype='integer' name='Gender_Count' ordinal='6' />
+            <column datatype='integer' name='Hospitalized_Count' ordinal='7' />
+            <column datatype='integer' name='Intensive Care' ordinal='8' />
+            <column datatype='integer' name='Deaths_Count' ordinal='9' />
+            <column datatype='boolean' name='Positive' ordinal='10' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Source</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Source]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Source</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Status</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Status]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Status</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age_Group</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Age_Group]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Age_Group</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Status_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Status_Count]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Status_Count</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Gender_Count]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Gender_Count</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hospitalized_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Hospitalized_Count]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Hospitalized_Count</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Intensive Care</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Intensive Care]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Intensive Care</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Deaths_Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Deaths_Count]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Deaths_Count</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Positive</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[Positive]</local-name>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias>Positive</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WINBOOL&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[rawData]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:K480:no:A1:K480:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Hospitalized_Count:qk]&quot;' value='Hospitalized/ICU' />
+          <alias key='&quot;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Status_Count:qk]&quot;' value='Total Cases' />
+        </aliases>
+      </column>
+      <column caption='Age Group' datatype='string' name='[Age_Group]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;0-9 Years&quot;' value='0-9' />
+          <alias key='&quot;10-19 Years&quot;' value='10-19' />
+          <alias key='&quot;20-29 Years&quot;' value='20-29' />
+          <alias key='&quot;30-39 Years&quot;' value='30-39' />
+          <alias key='&quot;40-49 Years&quot;' value='40-49' />
+          <alias key='&quot;50-59 Years&quot;' value='50-59' />
+          <alias key='&quot;60-69 Years&quot;' value='60-69' />
+          <alias key='&quot;70-79 Years&quot;' value='70-79' />
+          <alias key='&quot;80+ Years&quot;' value='80+' />
+        </aliases>
+      </column>
+      <column caption='MaxDate' datatype='date' name='[Calculation_117656571611664385]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='{fixed:MAX([Date])}' />
+      </column>
+      <column caption='Latest Day' datatype='boolean' name='[Calculation_2686960157659381761]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Date] = [Calculation_117656571611664385] THEN TRUE ELSE FALSE END' />
+      </column>
+      <column caption='Deaths Count' datatype='integer' name='[Deaths_Count]' role='measure' type='quantitative' />
+      <column caption='Sex' datatype='string' name='[Gender]' role='dimension' type='nominal' />
+      <column caption='Gender Count' datatype='integer' name='[Gender_Count]' role='measure' type='quantitative' />
+      <column caption='Hospitalized Count' datatype='integer' name='[Hospitalized_Count]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column datatype='string' name='[Source]' role='dimension' type='nominal' />
+      <column caption='Status' datatype='string' name='[Status]' role='dimension' type='nominal' />
+      <column caption='Status Count' datatype='integer' name='[Status_Count]' role='measure' type='quantitative' />
+      <column-instance column='[Hospitalized_Count]' derivation='Sum' name='[sum:Hospitalized_Count:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Status_Count]' derivation='Sum' name='[sum:Status_Count:qk]' pivot='key' type='quantitative' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/rdy2d/OneDrive/Documents/GitHub/COVID-19/san_diego_hhs/San Diego County COVID-19 Cases.twb Files/Data/Datasources 1/rawData (covid19_sandiegohhs).hyper' default-settings='yes' schema='Extract' sslmode='' update-time='03/28/2020 12:51:28 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='rawData (covid19_sandiegohhs)' increment-value='%null%' refresh-type='create' rows-inserted='189' timestamp-start='2020-03-28 00:51:28.933' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>rawData</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Source</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Source]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Source</remote-alias>
+              <ordinal>1</ordinal>
+              <family>rawData</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Status]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Status</remote-alias>
+              <ordinal>2</ordinal>
+              <family>rawData</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Age_Group</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Age_Group]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age_Group</remote-alias>
+              <ordinal>3</ordinal>
+              <family>rawData</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Gender]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Gender</remote-alias>
+              <ordinal>4</ordinal>
+              <family>rawData</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Status_Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Status_Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Status_Count</remote-alias>
+              <ordinal>5</ordinal>
+              <family>rawData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>55</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Gender_Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Gender_Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Gender_Count</remote-alias>
+              <ordinal>6</ordinal>
+              <family>rawData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>25</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Hospitalized_Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Hospitalized_Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Hospitalized_Count</remote-alias>
+              <ordinal>7</ordinal>
+              <family>rawData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Intensive Care</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Intensive Care]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Intensive Care</remote-alias>
+              <ordinal>8</ordinal>
+              <family>rawData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Deaths_Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Deaths_Count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Deaths_Count</remote-alias>
+              <ordinal>9</ordinal>
+              <family>rawData</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Positive</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[Positive]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Positive</remote-alias>
+              <ordinal>10</ordinal>
+              <family>rawData</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+        <filter class='categorical' column='[Source]'>
+          <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+            <groupfilter function='member' level='[Source]' member='&quot;San Diego County Residents&quot;' />
+            <groupfilter function='member' level='[Source]' member='&quot;Unknown&quot;' />
+          </groupfilter>
+        </filter>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.389056' measure-ordering='alphabetic' measure-percentage='0.352375' parameter-percentage='0.258569' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Hospitalized_Count:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Status_Count:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='Date' />
+        <field-sort-custom-order field='Source' />
+        <field-sort-custom-order field='Status' />
+        <field-sort-custom-order field='Age_Group' />
+        <field-sort-custom-order field='Gender' />
+        <field-sort-custom-order field='Status_Count' />
+        <field-sort-custom-order field='Gender_Count' />
+        <field-sort-custom-order field='Hospitalized_Count' />
+        <field-sort-custom-order field='Deaths_Count' />
+        <field-sort-custom-order field='Positive' />
+        <field-sort-custom-order field='Calculation_2686960157659381761' />
+        <field-sort-custom-order field='Calculation_117656571611664385' />
+        <field-sort-custom-order field='Intensive Care' />
+      </field-sort-info>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Cases'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' underline='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rawData (covid19_sandiegohhs)' name='federated.13rdygm05cu7qh10sy4sr0mq0g5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13rdygm05cu7qh10sy4sr0mq0g5k'>
+            <column caption='MaxDate' datatype='date' name='[Calculation_117656571611664385]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{fixed:MAX([Date])}' />
+            </column>
+            <column caption='Latest Day' datatype='boolean' name='[Calculation_2686960157659381761]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Date] = [Calculation_117656571611664385] THEN TRUE ELSE FALSE END' />
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='Status Count' datatype='integer' name='[Status_Count]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2686960157659381761]' derivation='None' name='[none:Calculation_2686960157659381761:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Status_Count]' derivation='Sum' name='[sum:Status_Count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2686960157659381761:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='top' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='top' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='18' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Status_Count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{7A42C2A5-5BB7-4700-A276-CAB136F29F75}' />
+    </worksheet>
+    <worksheet name='Cases by Age Group'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' underline='true'>Total &lt;Sheet Name&gt; (Years)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rawData (covid19_sandiegohhs)' name='federated.13rdygm05cu7qh10sy4sr0mq0g5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13rdygm05cu7qh10sy4sr0mq0g5k'>
+            <column caption='Age Group' datatype='string' name='[Age_Group]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;0-9 Years&quot;' value='0-9' />
+                <alias key='&quot;10-19 Years&quot;' value='10-19' />
+                <alias key='&quot;20-29 Years&quot;' value='20-29' />
+                <alias key='&quot;30-39 Years&quot;' value='30-39' />
+                <alias key='&quot;40-49 Years&quot;' value='40-49' />
+                <alias key='&quot;50-59 Years&quot;' value='50-59' />
+                <alias key='&quot;60-69 Years&quot;' value='60-69' />
+                <alias key='&quot;70-79 Years&quot;' value='70-79' />
+                <alias key='&quot;80+ Years&quot;' value='80+' />
+              </aliases>
+            </column>
+            <column caption='MaxDate' datatype='date' name='[Calculation_117656571611664385]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{fixed:MAX([Date])}' />
+            </column>
+            <column caption='SUM([Hospitalized Count]) / SUM([Status Count])' datatype='real' name='[Calculation_2445736105563664385]' role='measure' type='quantitative' user:unnamed='Cases by Age Group'>
+              <calculation class='tableau' formula='SUM([Hospitalized_Count]) / SUM([Status_Count])' />
+            </column>
+            <column caption='Latest Day' datatype='boolean' name='[Calculation_2686960157659381761]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Date] = [Calculation_117656571611664385] THEN TRUE ELSE FALSE END' />
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='Hospitalized Count' datatype='integer' name='[Hospitalized_Count]' role='measure' type='quantitative' />
+            <column caption='Status Count' datatype='integer' name='[Status_Count]' role='measure' type='quantitative' />
+            <column-instance column='[Age_Group]' derivation='None' name='[none:Age_Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2686960157659381761]' derivation='None' name='[none:Calculation_2686960157659381761:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Status_Count]' derivation='None' name='[none:Status_Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Status_Count]' derivation='Sum' name='[pcto:sum:Status_Count:qk:1]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Age_Group:nk]' ordering-type='Field' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Hospitalized_Count]' derivation='Sum' name='[sum:Hospitalized_Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Status_Count]' derivation='Sum' name='[sum:Status_Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2445736105563664385]' derivation='User' name='[usr:Calculation_2445736105563664385:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Hospitalized_Count:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Status_Count:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2686960157659381761:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Status_Count:qk]' included-values='in-range'>
+            <min>1</min>
+          </filter>
+          <slices>
+            <column>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Status_Count:qk]</column>
+            <column>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</column>
+            <column>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]' value='151' />
+            <format attr='title' class='0' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[Multiple Values]' scope='rows' value='Total Cases' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Age_Group:nk]' value='-90' />
+            <format attr='text-orientation' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]' value='-90' />
+            <format attr='text-format' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[usr:Calculation_2445736105563664385:qk]' value='p0.0%' />
+            <format attr='font-size' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[Multiple Values]' value='9' />
+            <format attr='font-size' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]' value='9' />
+            <format attr='font-size' field='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Age_Group:nk]' value='9' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='font-size' value='14' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]' />
+              <lod column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[pcto:sum:Status_Count:qk:1]' />
+              <lod column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[usr:Calculation_2445736105563664385:qk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='false' y-axis='true' />
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Age Group:&#9;</run>
+                <run bold='true'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Age_Group:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]&gt;:&#9;</run>
+                <run bold='true'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[Multiple Values]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>% of Total Status Count along Age Group:&#9;</run>
+                <run bold='true'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[pcto:sum:Status_Count:qk:1]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Portion of Age Group Hospitalized:&#9;</run>
+                <run bold='true'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[usr:Calculation_2445736105563664385:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+          </pane>
+        </panes>
+        <rows>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[Multiple Values]</rows>
+        <cols>([federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Age_Group:nk] / [federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names])</cols>
+      </table>
+      <simple-id uuid='{EF85B7E9-7040-483E-8778-DD4E60B16764}' />
+    </worksheet>
+    <worksheet name='Cases by Sex'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' underline='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rawData (covid19_sandiegohhs)' name='federated.13rdygm05cu7qh10sy4sr0mq0g5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13rdygm05cu7qh10sy4sr0mq0g5k'>
+            <column caption='MaxDate' datatype='date' name='[Calculation_117656571611664385]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{fixed:MAX([Date])}' />
+            </column>
+            <column caption='Latest Day' datatype='boolean' name='[Calculation_2686960157659381761]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Date] = [Calculation_117656571611664385] THEN TRUE ELSE FALSE END' />
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='Sex' datatype='string' name='[Gender]' role='dimension' type='nominal' />
+            <column caption='Gender Count' datatype='integer' name='[Gender_Count]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2686960157659381761]' derivation='None' name='[none:Calculation_2686960157659381761:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gender]' derivation='None' name='[none:Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Gender_Count]' derivation='None' name='[none:Gender_Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Gender_Count]' derivation='Sum' name='[pcto:sum:Gender_Count:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[Gender_Count]' derivation='Sum' name='[sum:Gender_Count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2686960157659381761:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender_Count:qk]' included-values='in-range'>
+            <min>1</min>
+          </filter>
+          <slices>
+            <column>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender_Count:qk]</column>
+            <column>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='14' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender:nk]' />
+              <wedge-size column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Gender_Count:qk]' />
+              <size column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Gender_Count:qk]' />
+              <tooltip column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[pcto:sum:Gender_Count:qk]' />
+              <text column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Gender_Count:qk]' />
+              <text column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Sex:&#9;</run>
+                <run bold='true'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Gender Count:&#9;</run>
+                <run bold='true'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Gender_Count:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>% of Total:&#9;</run>
+                <run bold='true'>&lt;[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[pcto:sum:Gender_Count:qk]&gt;</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{F832044C-09E9-42E2-80D4-E7E04AC5D0F4}' />
+    </worksheet>
+    <worksheet name='Daily Change in Reported Cases'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' underline='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='summarizedData(covid19_sandiegohhs)' name='federated.049xz6r120i6bk10tz9pd1pc7piw' />
+            <datasource name='Parameters' />
+            <datasource caption='compiledData (covid19_sandiegohhs)' name='federated.09jb7zu0gfoqvw15dbuil109b9nr' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases Reported Daily' caption='Data View' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Total&quot;'>
+              <calculation class='tableau' formula='&quot;Total&quot;' />
+              <aliases>
+                <alias key='&quot;Delta&quot;' value='Daily Change in Reported Cases' />
+                <alias key='&quot;Total&quot;' value='Total Cases Reported Daily' />
+                <alias key='&quot;TotalLog&quot;' value='Total Cases Reported Daily (Logarithmic Scale)' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.049xz6r120i6bk10tz9pd1pc7piw'>
+            <column caption='Case Count' datatype='integer' name='[CaseCount]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Category]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;IntensiveCare&quot;' value='Intensive Care' />
+                <alias key='&quot;NoIntervention&quot;' value='No Intervention' />
+              </aliases>
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column-instance column='[CaseCount]' derivation='Sum' name='[diff:sum:CaseCount:qk:1]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-field='[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]' ordering-type='Field' type='Difference'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column-instance column='[CaseCount]' derivation='Sum' name='[diff:sum:CaseCount:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Category]' derivation='None' name='[none:Category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.09jb7zu0gfoqvw15dbuil109b9nr'>
+            <column caption='Data View Selected' datatype='string' name='[Calculation_2167638829251383296]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+            </column>
+            <column datatype='integer' name='[Total]' role='measure' type='quantitative' />
+            <column-instance column='[Total]' derivation='Max' name='[diff:max:Total:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Calculation_2167638829251383296]' derivation='None' name='[none:Calculation_2167638829251383296:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk:1]' included-values='non-null' />
+          <filter class='categorical' column='[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[tdy:Date:ok]' />
+              <groupfilter function='member' level='[tdy:Date:ok]' member='#2020-03-07 00:00:00#' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2167638829251383296:nk]' member='&quot;Delta&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk:1]</column>
+            <column>[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]</column>
+            <column>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk:1]' scope='rows' value='Change in Confirmed Cases' />
+            <encoding attr='space' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <format attr='title' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]' scope='rows' value='Total Daily Case Change (X)' />
+            <format attr='display' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]' value='0' />
+            <format attr='text-format' field='[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]' value='*m/d' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Date:&#9;</run>
+                <run bold='true'>&lt;[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Category:&#9;</run>
+                <run bold='true'>&lt;[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Change:&#9;</run>
+                <run bold='true'>&lt;[federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk:1]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk:1]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]' />
+              <text column='[federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Date:&#9;</run>
+                <run bold='true'>&lt;[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Category:&#9;</run>
+                <run bold='true'>&lt;[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Change:&#9;</run>
+                <run bold='true'>&lt;[federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk:1]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <encodings>
+              <text column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]' />
+              <lod column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Date:&#9;</run>
+                <run bold='true'>&lt;[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Total&#9;</run>
+                <run bold='true'>&lt;[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Change:&#9;</run>
+                <run bold='true'>&lt;[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='user' />
+                <format attr='color' value='#000000' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='shape' value='times' />
+                <format attr='mark-color' value='#000000' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.049xz6r120i6bk10tz9pd1pc7piw].[diff:sum:CaseCount:qk:1] + [federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:max:Total:qk])</rows>
+        <cols>[federated.049xz6r120i6bk10tz9pd1pc7piw].[tdy:Date:ok]</cols>
+        <show-full-range>
+          <column>[federated.049xz6r120i6bk10tz9pd1pc7piw].[Date]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{A9C25469-DF74-460E-ADEC-2D2B58DDE2A3}' />
+    </worksheet>
+    <worksheet name='Deaths'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' underline='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rawData (covid19_sandiegohhs)' name='federated.13rdygm05cu7qh10sy4sr0mq0g5k' />
+          </datasources>
+          <datasource-dependencies datasource='federated.13rdygm05cu7qh10sy4sr0mq0g5k'>
+            <column caption='MaxDate' datatype='date' name='[Calculation_117656571611664385]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='{fixed:MAX([Date])}' />
+            </column>
+            <column caption='Latest Day' datatype='boolean' name='[Calculation_2686960157659381761]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [Date] = [Calculation_117656571611664385] THEN TRUE ELSE FALSE END' />
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column caption='Deaths Count' datatype='integer' name='[Deaths_Count]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2686960157659381761]' derivation='None' name='[none:Calculation_2686960157659381761:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Deaths_Count]' derivation='Sum' name='[sum:Deaths_Count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2686960157659381761:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='top' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='top' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='18' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Deaths_Count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{76EF08C9-F459-4E10-B601-5F0BDD03D004}' />
+    </worksheet>
+    <worksheet name='San Diego County COVID-19 Cases by City'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='casesByCity (covid19_sandiegohhs)' name='federated.024pzmk0tt0o2p1dzkd7x1tubcbb' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.024pzmk0tt0o2p1dzkd7x1tubcbb'>
+            <column datatype='real' name='[CasesPer100K]' role='measure' type='quantitative' />
+            <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column caption='Cases' datatype='integer' name='[Count]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+            <column datatype='datetime' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[City]' derivation='None' name='[none:City:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[County]' derivation='None' name='[none:County:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='None' name='[none:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CasesPer100K]' derivation='Sum' name='[sum:CasesPer100K:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Count]' derivation='Sum' name='[sum:Count:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[tdy:Date:ok]'>
+            <groupfilter function='level-members' level='[tdy:Date:ok]' />
+          </filter>
+          <slices>
+            <column>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[tdy:Date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[Longitude (generated)]' field-type='quantitative' max='-12913171.609917693' min='-13169073.947182212' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[Latitude (generated)]' field-type='quantitative' max='3945877.3651563432' min='3843412.9339388027' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]' palette='red_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]' palette='red_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]' value='Cases per 100K People'>
+              <formatted-text>
+                <run>Cases per 100K People</run>
+              </formatted-text>
+            </format>
+            <format attr='size' field='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]' value='Total Cases'>
+              <formatted-text>
+                <run>Total Cases</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='Coastline' value='true' />
+            <format attr='enabled' id='tunnel-service-link-track-case' value='true' />
+            <format attr='enabled' id='tunnel-street_limited-case' value='true' />
+            <format attr='enabled' id='tunnel-street-case' value='true' />
+            <format attr='enabled' id='tunnel-secondary-tertiary-case' value='true' />
+            <format attr='enabled' id='tunnel-primary-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk-case' value='true' />
+            <format attr='enabled' id='tunnel-motorway-case' value='true' />
+            <format attr='enabled' id='tunnel-trunk_link' value='true' />
+            <format attr='enabled' id='tunnel-motorway_link' value='true' />
+            <format attr='enabled' id='tunnel-service-link-track' value='true' />
+            <format attr='enabled' id='tunnel-street_limited' value='true' />
+            <format attr='enabled' id='tunnel-street' value='true' />
+            <format attr='enabled' id='tunnel-tertiary' value='true' />
+            <format attr='enabled' id='tunnel-secondary' value='true' />
+            <format attr='enabled' id='tunnel-primary' value='true' />
+            <format attr='enabled' id='tunnel-trunk' value='true' />
+            <format attr='enabled' id='tunnel-motorway' value='true' />
+            <format attr='enabled' id='road-street-low' value='true' />
+            <format attr='enabled' id='road-street_limited-low' value='true' />
+            <format attr='enabled' id='road-pedestrian-case' value='true' />
+            <format attr='enabled' id='road-service-link-track-case' value='true' />
+            <format attr='enabled' id='road-street_limited-case' value='true' />
+            <format attr='enabled' id='road-street-case' value='true' />
+            <format attr='enabled' id='road-tertiary-case' value='true' />
+            <format attr='enabled' id='road-secondary-case' value='true' />
+            <format attr='enabled' id='road-primary-case' value='true' />
+            <format attr='enabled' id='road-motorway_link-case' value='true' />
+            <format attr='enabled' id='road-trunk_link-case' value='true' />
+            <format attr='enabled' id='road-trunk-case' value='true' />
+            <format attr='enabled' id='road-motorway-case' value='true' />
+            <format attr='enabled' id='road-trunk_link' value='true' />
+            <format attr='enabled' id='road-motorway_link' value='true' />
+            <format attr='enabled' id='road-path' value='true' />
+            <format attr='enabled' id='road-pedestrian' value='true' />
+            <format attr='enabled' id='road-polygon' value='true' />
+            <format attr='enabled' id='road-service-link-track' value='true' />
+            <format attr='enabled' id='road-street_limited' value='true' />
+            <format attr='enabled' id='road-street' value='true' />
+            <format attr='enabled' id='road-tertiary' value='true' />
+            <format attr='enabled' id='road-secondary' value='true' />
+            <format attr='enabled' id='road-primary' value='true' />
+            <format attr='enabled' id='road-trunk' value='true' />
+            <format attr='enabled' id='road-motorway' value='true' />
+            <format attr='enabled' id='road-rail' value='true' />
+            <format attr='enabled' id='road-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-street-low' value='true' />
+            <format attr='enabled' id='bridge-street_limited-low' value='true' />
+            <format attr='enabled' id='bridge-pedestrian-case' value='true' />
+            <format attr='enabled' id='bridge-service-link-track-case' value='true' />
+            <format attr='enabled' id='bridge-street_limited-case' value='true' />
+            <format attr='enabled' id='bridge-street-case' value='true' />
+            <format attr='enabled' id='bridge-tertiary-case' value='true' />
+            <format attr='enabled' id='bridge-secondary-case' value='true' />
+            <format attr='enabled' id='bridge-primary-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link' value='true' />
+            <format attr='enabled' id='bridge-motorway_link' value='true' />
+            <format attr='enabled' id='bridge-path' value='true' />
+            <format attr='enabled' id='bridge-pedestrian' value='true' />
+            <format attr='enabled' id='bridge-service-link-track' value='true' />
+            <format attr='enabled' id='bridge-street_limited' value='true' />
+            <format attr='enabled' id='bridge-street' value='true' />
+            <format attr='enabled' id='bridge-tertiary' value='true' />
+            <format attr='enabled' id='bridge-secondary' value='true' />
+            <format attr='enabled' id='bridge-primary' value='true' />
+            <format attr='enabled' id='bridge-trunk' value='true' />
+            <format attr='enabled' id='bridge-motorway' value='true' />
+            <format attr='enabled' id='bridge-rail' value='true' />
+            <format attr='enabled' id='bridge-rail-tracks' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk-2-case' value='true' />
+            <format attr='enabled' id='bridge-motorway-2-case' value='true' />
+            <format attr='enabled' id='bridge-trunk_link-2' value='true' />
+            <format attr='enabled' id='bridge-motorway_link-2' value='true' />
+            <format attr='enabled' id='bridge-trunk-2' value='true' />
+            <format attr='enabled' id='bridge-motorway-2' value='true' />
+            <format attr='enabled' id='road-shields-2-white' value='true' />
+            <format attr='enabled' id='road-shields-2-black' value='true' />
+            <format attr='enabled' id='road-shields-1-white' value='true' />
+            <format attr='enabled' id='road-shields-1-black' value='true' />
+            <format attr='enabled' id='road-label-small' value='true' />
+            <format attr='enabled' id='road-label-big' value='true' />
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-temperatur-light' />
+            <format attr='geo-area-type' value='Zip Code' />
+          </style-rule>
+          <style-rule element='page-card-title'>
+            <format attr='title' value='Date Shown'>
+              <formatted-text>
+                <run>Date Shown</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]' />
+              <size column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]' />
+              <text column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:City:nk]' />
+              <text column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]' />
+              <lod column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:Country:nk]' />
+              <lod column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:State:nk]' />
+              <lod column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:County:nk]' />
+              <lod column='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:City:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Country:&#9;</run>
+                <run bold='true'>&lt;[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:Country:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>County:&#9;</run>
+                <run bold='true'>&lt;[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:County:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>State:&#9;</run>
+                <run bold='true'>&lt;[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:State:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>City:&#9;</run>
+                <run bold='true'>&lt;[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:City:nk]&gt;</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Cases per 100K People:&#9;</run>
+                <run bold='true'>&lt;[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:City:nk]</run>
+                <run>&gt; (&lt;</run>
+                <run>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]</run>
+                <run>&gt;)</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='12' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='3.6574585437774658' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[Latitude (generated)]</rows>
+        <cols>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[Longitude (generated)]</cols>
+        <pages>
+          <column>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[tdy:Date:ok]</column>
+        </pages>
+      </table>
+      <simple-id uuid='{9662CC0C-1D01-4A9C-A859-B269593DE1F0}' />
+    </worksheet>
+    <worksheet name='Total Cases Reported Daily'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' underline='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='compiledData (covid19_sandiegohhs)' name='federated.09jb7zu0gfoqvw15dbuil109b9nr' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases Reported Daily' caption='Data View' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Total&quot;'>
+              <calculation class='tableau' formula='&quot;Total&quot;' />
+              <aliases>
+                <alias key='&quot;Delta&quot;' value='Daily Change in Reported Cases' />
+                <alias key='&quot;Total&quot;' value='Total Cases Reported Daily' />
+                <alias key='&quot;TotalLog&quot;' value='Total Cases Reported Daily (Logarithmic Scale)' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.09jb7zu0gfoqvw15dbuil109b9nr'>
+            <column caption='Data View Selected' datatype='string' name='[Calculation_2167638829251383296]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Total]' role='measure' type='quantitative' />
+            <column-instance column='[Total]' derivation='Sum' name='[diff:sum:Total:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Calculation_2167638829251383296]' derivation='None' name='[none:Calculation_2167638829251383296:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total]' derivation='Sum' name='[sum:Total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2167638829251383296:nk]' member='&quot;Total&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]' scope='cols' value='' />
+            <encoding attr='space' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]' field-type='quantitative' min='#2020-03-07 00:00:00#' range-type='fixedmin' scope='cols' type='space' />
+            <format attr='title' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[sum:Total:qk]' scope='rows' value='Total Confirmed Cases' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]' value='*m/d' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' palette='red_blue_diverging_10_0' reverse='true' symmetric='false' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' value='Daily Change in Reported Cases'>
+              <formatted-text>
+                <run fontalignment='1'>Daily Change in Reported Cases</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' />
+              <text column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[sum:Total:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='4.3685784339904785' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[sum:Total:qk]</rows>
+        <cols>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]</cols>
+        <forecast-specification auto-forecast-agg='false' band-confidence-level='95.000000' enabled='false' fill-type='fill-missing' forecast-agg='Day-Trunc' ignore-last='0' model-type='auto-season' range-periods='Week-Trunc' range-size='2' range-type='next' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{9C827AD0-AD8E-47C9-8470-8E2A250BEB40}' />
+    </worksheet>
+    <worksheet name='Total Cases Reported Daily (Logarithmic)'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' underline='true'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='compiledData (covid19_sandiegohhs)' name='federated.09jb7zu0gfoqvw15dbuil109b9nr' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column alias='Total Cases Reported Daily' caption='Data View' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Total&quot;'>
+              <calculation class='tableau' formula='&quot;Total&quot;' />
+              <aliases>
+                <alias key='&quot;Delta&quot;' value='Daily Change in Reported Cases' />
+                <alias key='&quot;Total&quot;' value='Total Cases Reported Daily' />
+                <alias key='&quot;TotalLog&quot;' value='Total Cases Reported Daily (Logarithmic Scale)' />
+              </aliases>
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.09jb7zu0gfoqvw15dbuil109b9nr'>
+            <column caption='Data View Selected' datatype='string' name='[Calculation_2167638829251383296]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Parameters].[Parameter 2]' />
+            </column>
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Total]' role='measure' type='quantitative' />
+            <column-instance column='[Total]' derivation='Sum' name='[diff:sum:Total:qk]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+                <address>
+                  <value>-1</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Calculation_2167638829251383296]' derivation='None' name='[none:Calculation_2167638829251383296:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Total]' derivation='Sum' name='[sum:Total:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Date]' derivation='Day-Trunc' name='[tdy:Date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]'>
+            <groupfilter function='member' level='[none:Calculation_2167638829251383296:nk]' member='&quot;TotalLog&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]' scope='cols' value='' />
+            <encoding attr='space' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]' field-type='quantitative' min='#2020-03-07 00:00:00#' range-type='fixedmin' scope='cols' type='space' />
+            <format attr='title' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[sum:Total:qk]' scope='rows' value='Total Confirmed Cases' />
+            <encoding attr='space' class='0' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[sum:Total:qk]' field-type='quantitative' scale='log' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]' value='*m/d' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' palette='red_blue_diverging_10_0' reverse='true' symmetric='false' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' value='Daily Change in Reported Cases (Logarithmic)'>
+              <formatted-text>
+                <run fontalignment='1'>Daily Change in Reported Cases (Logarithmic)</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' />
+              <text column='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[sum:Total:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='4.3685784339904785' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[sum:Total:qk]</rows>
+        <cols>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[tdy:Date:qk]</cols>
+        <forecast-specification auto-forecast-agg='false' band-confidence-level='95.000000' enabled='false' fill-type='fill-missing' forecast-agg='Day-Trunc' ignore-last='0' model-type='auto-season' range-periods='Week-Trunc' range-size='2' range-type='next' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{2F352886-0500-48E5-B27B-75E4AE463A72}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Affected SDC Cities'>
+      <repository-location derived-from='https://public.tableau.com/workbooks/covid19_sandiegohhs/AffectedSanDiegoCountyCities?rev=' id='AffectedSDCCities' path='/workbooks/covid19_sandiegohhs' revision='' />
+      <style>
+        <style-rule element='dash-text'>
+          <format attr='vertical-align' id='dash-text_10' value='top' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='137' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='86618' id='174' param='horz' type='layout-flow' w='99546' x='227' y='12961'>
+            <zone h='86618' id='172' param='horz' type='layout-flow' w='99546' x='227' y='12961'>
+              <zone h='86618' id='170' type='layout-basic' w='99546' x='227' y='12961'>
+                <zone h='74289' id='132' name='San Diego County COVID-19 Cases by City' show-title='false' w='99546' x='227' y='12961'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='12329' id='135' name='San Diego County COVID-19 Cases by City' pane-specification-id='0' param='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]' type='color' w='79938' x='19835' y='87250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='820' h='12329' id='136' is-fixed='true' name='San Diego County COVID-19 Cases by City' pane-specification-id='0' param='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]' type='size' w='19608' x='227' y='87250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='12540' id='222' param='horz' type='layout-flow' w='99546' x='227' y='421'>
+            <zone fixed-size='2012' forceUpdate='true' h='12540' id='10' is-fixed='true' type='text' w='57321' x='227' y='421'>
+              <formatted-text>
+                <run fontsize='16'>San Diego County Confirmed COVID-19 Cases by City Over Time</run>
+                <run>Æ&#10;</run>
+                <run fontsize='16'>(</run>
+                <run fontsize='16' italic='true'>Click Play in Date Shown Slider</run>
+                <run fontsize='16'>)</run>
+              </formatted-text>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone fixed-size='1480' h='12540' id='175' is-fixed='true' looped='1' name='San Diego County COVID-19 Cases by City' synchronized='0' type='currpage' w='42225' x='57548' y='421'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='242' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99158' id='241' param='vert' type='layout-flow' w='99546' x='227' y='421'>
+                <zone fixed-size='2012' forceUpdate='true' h='12540' id='10' type='text' w='57321' x='227' y='421'>
+                  <formatted-text>
+                    <run fontsize='16'>San Diego County Confirmed COVID-19 Cases by City Over Time</run>
+                    <run>Æ&#10;</run>
+                    <run fontsize='16'>(</run>
+                    <run fontsize='16' italic='true'>Click Play in Date Shown Slider</run>
+                    <run fontsize='16'>)</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='74289' id='132' is-fixed='true' name='San Diego County COVID-19 Cases by City' show-title='false' w='99546' x='227' y='12961'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='12329' id='135' name='San Diego County COVID-19 Cases by City' pane-specification-id='0' param='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]' type='color' w='79938' x='19835' y='87250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='820' h='12329' id='136' name='San Diego County COVID-19 Cases by City' pane-specification-id='0' param='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]' type='size' w='19608' x='227' y='87250'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='1480' h='12540' id='175' looped='1' name='San Diego County COVID-19 Cases by City' synchronized='0' type='currpage' w='42225' x='57548' y='421'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{B3D2E609-9E79-4698-9D53-5EA0624576CA}' />
+    </dashboard>
+    <dashboard name='San Deigo County HHSA'>
+      <repository-location id='SanDeigoCountyHHSA' path='/workbooks/covid19_sandiegohhs' revision='' />
+      <style>
+        <style-rule element='dash-text'>
+          <format attr='vertical-align' id='dash-text_13' value='top' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column alias='Total Cases Reported Daily' caption='Data View' datatype='string' name='[Parameter 2]' param-domain-type='list' role='measure' type='nominal' value='&quot;Total&quot;'>
+          <calculation class='tableau' formula='&quot;Total&quot;' />
+          <aliases>
+            <alias key='&quot;Delta&quot;' value='Daily Change in Reported Cases' />
+            <alias key='&quot;Total&quot;' value='Total Cases Reported Daily' />
+            <alias key='&quot;TotalLog&quot;' value='Total Cases Reported Daily (Logarithmic Scale)' />
+          </aliases>
+          <members>
+            <member alias='Total Cases Reported Daily' value='&quot;Total&quot;' />
+            <member alias='Total Cases Reported Daily (Logarithmic Scale)' value='&quot;TotalLog&quot;' />
+            <member alias='Daily Change in Reported Cases' value='&quot;Delta&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='82824' id='7' param='horz' type='layout-flow' w='57718' x='227' y='8376'>
+            <zone h='82824' id='3' param='vert' type='layout-flow' w='57718' x='227' y='8376'>
+              <zone fixed-size='25' forceUpdate='true' h='1738' id='14' is-fixed='true' type='text' w='57718' x='227' y='8376'>
+                <formatted-text>
+                  <run bold='true' underline='true'>&lt;</run>
+                  <run bold='true' underline='true'>[Parameters].[Parameter 2]</run>
+                  <run bold='true' underline='true'>&gt;</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='80980' id='5' name='Total Cases Reported Daily' show-title='false' w='57718' x='227' y='10114'>
+                <layout-cache minheight='132' minwidth='178' type-h='scalable' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='53' id='10' name='Daily Change in Reported Cases' show-title='false' w='57718' x='227' y='91094'>
+                <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='cell' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='53' id='19' name='Total Cases Reported Daily (Logarithmic)' show-title='false' w='57718' x='227' y='91147'>
+                <layout-cache has-max-size-h='true' has-max-size-w='true' maxheight='1' maxwidth='1' minheight='1' minwidth='1' type-h='scalable' type-w='scalable' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='7955' id='39' type='layout-basic' w='99546' x='227' y='421'>
+            <zone h='7955' id='12' param='horz' type='layout-flow' w='57718' x='227' y='421'>
+              <zone forceUpdate='true' h='7955' id='13' type='text' w='57718' x='227' y='421'>
+                <formatted-text>
+                  <run fontsize='16'>San Diego County Confirmed COVID-19 Cases as of &lt;[Parameters].[Parameter 1]&gt;</run>
+                  <run>&#10;Resident data from March 14, 2020, from San Diego County Health &amp; Human Services Administration Coronavirus Disease 2019; prior to March 14, 2020, data sourced from web archives of SDC-HHSA and Union Tribune data.  Data excludes non-residents.</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone h='7955' id='40' param='horz' type='layout-flow' w='41828' x='57945' y='421'>
+              <zone custom-title='true' h='7955' id='9' mode='compact' param='[Parameters].[Parameter 2]' type='paramctrl' w='41828' x='57945' y='421'>
+                <formatted-text>
+                  <run fontsize='12'>Select Data View:</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='6587' id='17' layout-strategy-id='distribute-evenly' param='horz' type='layout-flow' w='99546' x='227' y='92992'>
+            <zone h='6586' id='11' name='Daily Change in Reported Cases' pane-specification-id='3' param='[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]' type='color' w='33201' x='227' y='92993'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='6586' id='8' name='Total Cases Reported Daily' pane-specification-id='1' param='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' type='color' w='33172' x='33428' y='92993'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='6586' id='20' name='Total Cases Reported Daily (Logarithmic)' pane-specification-id='1' param='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' type='color' w='33173' x='66600' y='92993'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone forceUpdate='true' h='1792' id='18' type='text' w='99546' x='227' y='91200'>
+            <formatted-text>
+              <run bold='true' underline='true'>Legend:</run>
+            </formatted-text>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='24921' id='25' layout-strategy-id='distribute-evenly' param='horz' type='layout-flow' w='19496' x='80277' y='8376'>
+            <zone h='24921' id='30' layout-strategy-id='distribute-evenly' param='vert' type='layout-flow' w='19495' x='80278' y='8377'>
+              <zone h='12487' id='26' name='Cases' w='19495' x='80278' y='8377'>
+                <layout-cache cell-count-h='1' non-cell-size-h='56' type-h='cell' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='12434' id='31' name='Deaths' w='19495' x='80278' y='20864'>
+                <layout-cache cell-count-h='1' non-cell-size-h='56' type-h='cell' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='57903' id='32' name='Cases by Age Group' w='41828' x='57945' y='33297'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='24921' id='27' name='Cases by Sex' w='22332' x='57945' y='8376'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='2050' minheight='2050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='80' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='99158' id='79' param='vert' type='layout-flow' w='99546' x='227' y='421'>
+                <zone forceUpdate='true' h='7955' id='13' type='text' w='57718' x='227' y='421'>
+                  <formatted-text>
+                    <run fontsize='16'>San Diego County Confirmed COVID-19 Cases as of &lt;[Parameters].[Parameter 1]&gt;</run>
+                    <run>&#10;Resident data from March 14, 2020, from San Diego County Health &amp; Human Services Administration Coronavirus Disease 2019; prior to March 14, 2020, data sourced from web archives of SDC-HHSA and Union Tribune data.  Data excludes non-residents.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' h='7955' id='9' mode='compact' param='[Parameters].[Parameter 2]' type='paramctrl' w='41828' x='57945' y='421'>
+                  <formatted-text>
+                    <run fontsize='12'>Select Data View:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='25' forceUpdate='true' h='1738' id='14' type='text' w='57718' x='227' y='8376'>
+                  <formatted-text>
+                    <run bold='true' underline='true'>&lt;</run>
+                    <run bold='true' underline='true'>[Parameters].[Parameter 2]</run>
+                    <run bold='true' underline='true'>&gt;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='191' h='24921' id='27' is-fixed='true' name='Cases by Sex' w='22332' x='57945' y='8376'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='92' h='12487' id='26' is-fixed='true' name='Cases' w='19495' x='80278' y='8377'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='56' type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='80980' id='5' is-fixed='true' name='Total Cases Reported Daily' show-title='false' w='57718' x='227' y='10114'>
+                  <layout-cache minheight='132' minwidth='178' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6586' id='8' name='Total Cases Reported Daily' pane-specification-id='1' param='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' type='color' w='33172' x='33428' y='92993'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='91' h='12434' id='31' is-fixed='true' name='Deaths' w='19495' x='80278' y='20864'>
+                  <layout-cache cell-count-h='1' non-cell-size-h='56' type-h='cell' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='57903' id='32' is-fixed='true' name='Cases by Age Group' w='41828' x='57945' y='33297'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='53' id='10' is-fixed='true' name='Daily Change in Reported Cases' show-title='false' w='57718' x='227' y='91094'>
+                  <layout-cache has-max-size-h='true' maxheight='1' minheight='1' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6586' id='11' name='Daily Change in Reported Cases' pane-specification-id='3' param='[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]' type='color' w='33201' x='227' y='92993'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='53' id='19' is-fixed='true' name='Total Cases Reported Daily (Logarithmic)' show-title='false' w='57718' x='227' y='91147'>
+                  <layout-cache has-max-size-h='true' has-max-size-w='true' maxheight='1' maxwidth='1' minheight='1' minwidth='1' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='6586' id='20' name='Total Cases Reported Daily (Logarithmic)' pane-specification-id='1' param='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' type='color' w='33173' x='66600' y='92993'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='1792' id='18' type='text' w='99546' x='227' y='91200'>
+                  <formatted-text>
+                    <run bold='true' underline='true'>Legend:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{7F640809-B732-4726-9C9B-11AC742255A6}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.5' source-height='76'>
+    <window class='dashboard' maximized='true' name='San Deigo County HHSA'>
+      <viewpoints>
+        <viewpoint name='Cases'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Cases by Age Group'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Cases by Sex'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Daily Change in Reported Cases'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Deaths'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Cases Reported Daily'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Total Cases Reported Daily (Logarithmic)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='9' />
+      <simple-id uuid='{C2D3A4A2-1723-44BD-93F0-A4072BAEA96B}' />
+    </window>
+    <window class='dashboard' name='Affected SDC Cities'>
+      <viewpoints>
+        <viewpoint name='San Diego County COVID-19 Cases by City'>
+          <current-page>
+            <multibucket>
+              <bucket>#2020-03-27 00:00:00#</bucket>
+            </multibucket>
+          </current-page>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]</field>
+            </color-one-way>
+          </highlight>
+          <default-map-tool-selection tool='16' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{96B6C271-FB2B-4EBE-A155-CB67E0D7FF14}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Cases'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Date:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{0528556B-4ABC-46A0-9AE0-73EE2AF1782C}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Cases by Age Group'>
+      <cards>
+        <edge name='left'>
+          <strip size='270'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[:Measure Names]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Age_Group:nk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157655515136:qk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender_Count:qk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Status_Count:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{87D6FDC9-B70E-447F-851E-32C109138409}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Cases by Sex'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[sum:Gender_Count:qk]' type='size' />
+          </strip>
+        </edge>
+        <edge name='bottom'>
+          <strip size='94'>
+            <card type='caption' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender:nk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Gender_Count:qk]</field>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[yr:Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{22EC53AA-128D-4710-8CA7-3F5A481301DA}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Daily Change in Reported Cases'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='3' param='[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.049xz6r120i6bk10tz9pd1pc7piw].[none:Category:nk]</field>
+            <field>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{124DF4A3-7D60-41AC-B2D2-0B7B4DF7960B}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Deaths'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.13rdygm05cu7qh10sy4sr0mq0g5k].[none:Calculation_2686960157659381761:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5A6A8E90-E62A-4D69-AF8C-98693C797FCA}' />
+    </window>
+    <window class='worksheet' hidden='true' name='San Diego County COVID-19 Cases by City'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card looped='1' type='currpage' />
+            <card pane-specification-id='0' param='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:Count:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <current-page>
+          <multibucket>
+            <bucket>#2020-03-25 00:00:00#</bucket>
+          </multibucket>
+        </current-page>
+        <highlight>
+          <color-one-way>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[attr:Date:ok]</field>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[dy:Date:ok]</field>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:Calculation_2917488166183309312:nk]</field>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:City:nk]</field>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:Country:nk]</field>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[none:Type:nk]</field>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[sum:CasesPer100K:qk]</field>
+            <field>[federated.024pzmk0tt0o2p1dzkd7x1tubcbb].[yr:Date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{00F341C6-7138-410B-B453-6D036CD3A58E}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Total Cases Reported Daily'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 2]</field>
+            <field>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]</field>
+            <field>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]</field>
+            <field>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Forecast Indicator:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A2A9D418-A8E1-4BAC-A019-2C67381CA999}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Total Cases Reported Daily (Logarithmic)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 2]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Parameter 2]</field>
+            <field>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[diff:sum:Total:qk]</field>
+            <field>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Calculation_2167638829251383296:nk]</field>
+            <field>[federated.09jb7zu0gfoqvw15dbuil109b9nr].[none:Forecast Indicator:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{4EB17433-1124-444A-B408-75564AA90F14}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Affected SDC Cities' width='192'>
+      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
+      2CPBDVrufI/F5iAxOYXTjcfwzb8hv6QMPRbFkZSC02qktKyUuzeukpbqJd6bhdVkYm+aiz9f
+      vYbL5aLmYB3zq0GKy3bf2jH1epjM3ELEpg98Eabz9MFdsqrqSXc7Ps2ogIXZKXp7+8gtP0hO
+      WtLPP0H8LF2LcPPWHZrOncfyoVsjFfTBb4L1WITh15MUFeZ9ijEBsDj/FqszCZfD9vMTi19k
+      bWmW9ZiddO9P3QatFrkVQihNboUQSpMAhNIkAKE0CUAoTQIQSpMAhNIkAKE0CUAoTQIQSpMA
+      hNIkAKE0CUAoTQIQSpMAhNIkAKE0CUAoTQIQSpMAhNIkAKE0CUAoTQIQSpMAhNIkAKE0CUAo
+      TQIQSpMAhNIkAKE0CUAoTQIQSpMAhNIkAKE0CUAoTQIQSpMAhNIkAKE0CUAobfvvBOu6ztzS
+      Elos9inHI8Q/1K4/lP1mbo5ANPqpxiLEP5xcAgmlSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoE
+      IJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBC
+      aRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQm
+      AQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKA
+      UJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQil
+      SQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoE
+      IJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBC
+      aRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQm
+      AQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKAUJoEIJQmAQilSQBCaRKA
+      UJoEIJQmAQilSQBCaRKAUJoEIJT2/wB61XARZP8ivwAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='San Deigo County HHSA' width='192'>
+      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
+      AIKh/T+QvkbKEHhxLgAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
